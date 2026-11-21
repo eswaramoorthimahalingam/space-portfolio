@@ -13,8 +13,7 @@ export const Skills = () => {
   return (
     <section
       id="skills"
-      style={{ transform: "scale(0.9)" }}
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden py-20"
+      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden px-5 py-16 sm:px-8"
     >
       <SkillText />
 
@@ -80,11 +79,11 @@ export const Skills = () => {
         ))}
       </div>
 
-      <div className="w-full h-full absolute">
+      <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
           <video
             className="w-full h-auto"
-            preload="false"
+            preload="metadata"
             playsInline
             loop
             muted

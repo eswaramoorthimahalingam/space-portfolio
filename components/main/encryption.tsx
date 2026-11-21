@@ -7,57 +7,60 @@ import { slideInFromTop } from "@/lib/motion";
 
 export const Encryption = () => {
   return (
-    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full -z-20">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
-        <motion.div
+    <div id="about-me" className="relative isolate flex w-full flex-col items-center justify-center gap-6 overflow-hidden bg-[#100c08] px-5 py-14 text-center sm:gap-8 sm:py-20">
+      <div className="relative max-w-3xl">
+        <motion.h2
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          className="text-balance text-3xl font-medium leading-[1.17] text-gray-200 sm:text-[40px]"
         >
-          Performance{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            &
+          {" "}
+          <span className="text-transparent bg-clip-text brand-gold">
+            BookYourTurf
           </span>{" "}
-          security.
-        </motion.div>
+          <span className="block">with Nottam InfoTech.</span>
+        </motion.h2>
       </div>
 
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
+      <div className="flex flex-col items-center justify-center gap-3 relative">
         <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
           <Image
-            src="/lock-top.png"
-            alt="Lock top"
-            width={50}
-            height={50}
-            className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"
-          />
-          <Image
-            src="/lock-main.png"
-            alt="Lock main"
-            width={70}
-            height={70}
-            className="z-10"
+            src="/nottam-logo.jpeg"
+            alt="Nottam InfoTech crest"
+            width={140}
+            height={140}
+            className="transition-transform duration-200 group-hover:-translate-y-1"
           />
         </div>
 
-        <div className="Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042F88B] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px]">Encryption</h1>
+        <div className="Welcome-box px-[15px] py-[4px] z-[20] border border-[#d2a04d80] opacity-[0.9]">
+          <span className="Welcome-text text-[12px]">About Nottam InfoTech</span>
         </div>
       </div>
 
-      <div className="absolute z-[20] bottom-[10px] px-[5px]">
-        <div className="cursive text-[20px] font-medium text-center text-gray-300">
-          Secure your data with end-to-end encryption.
-        </div>
+      <div className="relative w-full max-w-[38rem]">
+        <p className="text-pretty text-lg leading-[1.8] text-stone-100 sm:text-xl sm:leading-[1.75]">
+          Nottam InfoTech owns and operates{" "}
+          <a
+            href="https://bookyourturf.net/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="underline underline-offset-4"
+          >
+            BookYourTurf
+          </a>
+          , a digital platform for turf management and player bookings, with
+          real-time availability, payments, and booking automation.
+        </p>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center opacity-50">
         <video
           loop
           muted
           autoPlay
           playsInline
-          preload="false"
-          className="w-full h-auto"
+          preload="metadata"
+          className="h-full w-full object-cover"
         >
           <source src="/videos/encryption-bg.webm" type="video/webm" />
         </video>

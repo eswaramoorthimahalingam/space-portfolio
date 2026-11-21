@@ -1,5 +1,5 @@
 {
-  "name": "space-portfolio",
+  "name": "nottam-infotech",
   "version": "1.0.1",
   "private": true,
   "scripts": {
@@ -8,63 +8,8 @@
     "start": "next start",
     "lint": "eslint ."
   },
-  "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhyyy@gmail.com",
-    "url": "https://github.com/sanidhyy"
-  },
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
-  "keywords": [
-    "reactjs",
-    "nextjs",
-    "vercel",
-    "react",
-    "space-portfolio",
-    "portfolio",
-    "react-icons",
-    "cn",
-    "clsx",
-    "3d-portfolio",
-    "3d-website",
-    "sonner",
-    "framer-motion",
-    "motion",
-    "animation",
-    "heroicons",
-    "next-themes",
-    "postcss",
-    "prettier",
-    "react-dom",
-    "tailwindcss",
-    "tailwindcss-animate",
-    "ui/ux",
-    "js",
-    "javascript",
-    "typescript",
-    "eslint",
-    "html",
-    "css"
-  ],
+  "description": "Nottam InfoTech company website and BookYourTurf product overview.",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sanidhyy/space-portfolioit"
-  },
-  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
-  "bugs": {
-    "url": "https://github.com/sanidhyy/space-portfolio/issues",
-    "email": "sanidhyyy@gmail.com"
-  },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@react-three/drei": "^10.7.9",
@@ -93,7 +38,7 @@
     "typescript": "^6"
   },
   "overrides": {
-    "@types/react": "19.3.0",
-    "@types/react-dom": "19.3.0"
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
   }
 }

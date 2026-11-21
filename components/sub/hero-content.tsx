@@ -1,13 +1,11 @@
 "use client";
 
-import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { HeroCrest } from "./hero-crest";
 
 import {
   slideInFromLeft,
   slideInFromRight,
-  slideInFromTop,
 } from "@/lib/motion";
 
 export const HeroContent = () => {
@@ -15,60 +13,45 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]"
+      className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-5 pb-8 pt-[calc(65px+2rem)] sm:px-8 md:min-h-[100svh] md:grid-cols-[1.2fr_1fr] md:gap-12 md:pb-12 md:pt-[calc(65px+3rem)] lg:px-12"
     >
-      <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
-        <motion.div
-          variants={slideInFromTop}
-          className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]]"
-        >
-          <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
-          <h1 className="Welcome-text text-[13px]">
-            Fullstack Developer Portfolio
-          </h1>
-        </motion.div>
+      <div className="flex min-w-0 flex-col gap-5 lg:gap-6 text-start">
+        <div aria-hidden="true" className="h-[38px]" />
 
-        <motion.div
+        <motion.h1
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-6xl text-bold text-white max-w-[600px] w-auto h-auto"
+          className="text-balance max-w-[19ch] text-[clamp(2.4rem,4.7vw,4rem)] font-medium leading-[1.06] tracking-tight text-white"
         >
           <span>
-            Providing{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              the best
-            </span>{" "}
-            project experience.
+            Products and software for{" "}
+            <span className="text-transparent bg-clip-text brand-gold">
+              your business.
+            </span>
           </span>
-        </motion.div>
+        </motion.h1>
 
         <motion.p
           variants={slideInFromLeft(0.8)}
-          className="text-lg text-gray-400 my-5 max-w-[600px]"
+          className="max-w-[48ch] text-pretty text-base leading-relaxed text-gray-300 sm:text-lg"
         >
-          I&apos;m a Full Stack Software Engineer with experience in Website,
-          Mobile, and Software development. Check out my projects and skills.
+          We create our own digital products, including BookYourTurf, and build
+          websites and custom software for growing businesses.
         </motion.p>
 
         <motion.a
+          href="#projects"
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Learn more
+          Explore our product
         </motion.a>
       </div>
 
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center"
+        className="flex min-w-0 justify-center"
       >
-        <Image
-          src="/hero-bg.svg"
-          alt="work icons"
-          height={650}
-          width={650}
-          draggable={false}
-          className="select-none"
-        />
+        <HeroCrest />
       </motion.div>
     </motion.div>
   );

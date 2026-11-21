@@ -1,76 +1,71 @@
 'use client';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
+import { NAV_LINKS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const close = (event: KeyboardEvent) => { if (event.key === "Escape") setIsMobileMenuOpen(false); };
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
+    <div className="w-full h-[65px] fixed top-0 bg-transparent z-50">
       {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
+      <div className="w-full h-full flex items-center justify-between mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Logo + Name */}
         <Link
-          href="#about-me"
+          href="#home"
           className="flex items-center"
         >
           <Image
-            src="/logo.png"
-            alt="Logo"
-            width={70}
-            height={70}
+            src="/nottam-logo.jpeg"
+            alt="Nottam InfoTech logo"
+            width={48}
+            height={48}
             draggable={false}
             className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">John Doe</div>
+          <div className="whitespace-nowrap text-sm sm:text-base font-semibold ml-[10px] text-gray-300">Nottam InfoTech</div>
         </Link>
 
         {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
+        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between">
+          <div className="flex items-center justify-between w-full h-auto bg-transparent px-[20px] py-[10px] text-gray-200">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+                className="cursor-pointer hover:text-[rgb(255,217,128)] transition"
               >
                 {link.title}
               </Link>
             ))}
 
-            {/* Source Code */}
+            {/* BookYourTurf */}
             <Link
-              href={LINKS.sourceCode}
+              href="https://bookyourturf.net/"
               target="_blank"
               rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+              className="cursor-pointer hover:text-[rgb(255,217,128)] transition"
             >
-              Source Code
+              BookYourTurf
             </Link>
           </div>
         </div>
 
-        {/* Social Icons (Web) */}
-        <div className="hidden md:flex flex-row gap-5">
-          {SOCIALS.map(({ link, name, icon: Icon }) => (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={name}
-            >
-              <Icon className="h-6 w-6 text-white" />
-            </Link>
-          ))}
-        </div>
-
         {/* Hamburger Menu */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
+          className="md:hidden text-white rounded p-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e5bc60] text-4xl"
+          aria-label="Navigation menu"
+          aria-expanded={isMobileMenuOpen}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-controls="mobile-navigation"
         >
           ☰
         </button>
@@ -78,43 +73,30 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
+        <div id="mobile-navigation" className="absolute top-[65px] left-0 w-full bg-transparent p-5 flex flex-col items-center text-gray-300 md:hidden">
           {/* Links */}
           <div className="flex flex-col items-center gap-4">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+                className="cursor-pointer hover:text-[rgb(255,217,128)] transition text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.title}
               </Link>
             ))}
             <Link
-              href={LINKS.sourceCode}
+              href="https://bookyourturf.net/"
               target="_blank"
               rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+              className="cursor-pointer hover:text-[rgb(255,217,128)] transition text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Source Code
+              BookYourTurf
             </Link>
           </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center gap-6 mt-6">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
-              <Link
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-                key={name}
-              >
-                <Icon className="h-8 w-8 text-white" />
-              </Link>
-            ))}
-          </div>
         </div>
       )}
     </div>

@@ -1,12 +1,3 @@
-import { FaYoutube, FaFacebook } from "react-icons/fa";
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
-  RxLinkedinLogo,
-} from "react-icons/rx";
-
 export const SKILL_DATA = [
   {
     skill_name: "HTML",
@@ -57,7 +48,7 @@ export const SKILL_DATA = [
     height: 80,
   },
   {
-    skill_name: "Next.js 14",
+    skill_name: "Next.js",
     image: "next.png",
     width: 80,
     height: 80,
@@ -85,24 +76,6 @@ export const SKILL_DATA = [
     image: "mongodb.png",
     width: 40,
     height: 40,
-  },
-] as const;
-
-export const SOCIALS = [
-  {
-    name: "Instagram",
-    icon: RxInstagramLogo,
-    link: "https://instagram.com",
-  },
-  {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://facebook.com",
-  },
-  {
-    name: "Twitter",
-    icon: RxTwitterLogo,
-    link: "https://x.com/_sanidhyy",
   },
 ] as const;
 
@@ -162,7 +135,7 @@ export const FRONTEND_SKILL = [
     height: 80,
   },
   {
-    skill_name: "Next.js 14",
+    skill_name: "Next.js",
     image: "next.png",
     width: 80,
     height: 80,
@@ -259,106 +232,69 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "Find a turf",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
-    image: "/projects/project-1.png",
-    link: "https://example.com",
+      "Browse venues by location and compare live slot availability, ratings, opening hours, and hourly prices.",
+    link: "https://bookyourturf.net/",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "Book in seconds",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
+      "Choose an available time and book your game online, without calling around to check slots.",
+    link: "https://bookyourturf.net/",
   },
   {
-    title: "Space Themed Website",
+    title: "Secure payments and wallet",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+      "Pay securely online and use a wallet that remembers your game, making repeat bookings easier.",
+    link: "https://bookyourturf.net/",
   },
 ] as const;
 
 export const FOOTER_DATA = [
+  { title: "Company", data: [
+    { name: "About Nottam InfoTech", link: "#about-me" },
+    { name: "Our capabilities", link: "#skills" },
+  ] },
+  { title: "BookYourTurf", data: [
+    { name: "Features", link: "#projects" },
+    { name: "Book a turf", link: "https://bookyourturf.net/" },
+  ] },
+  { title: "Contact", data: [
+    { name: "nottaminfotech@gmail.com", link: "mailto:nottaminfotech@gmail.com" },
+  ] },
+] as const;
+
+export const OFFICE_DATA = [
   {
-    title: "Community",
-    data: [
-      {
-        name: "YouTube",
-        icon: FaYoutube,
-        link: "https://youtube.com",
-      },
-      {
-        name: "GitHub",
-        icon: RxGithubLogo,
-        link: "https://github.com",
-      },
-      {
-        name: "Discord",
-        icon: RxDiscordLogo,
-        link: "https://discord.com",
-      },
-    ],
+    name: "Operational office, Chennai",
+    address: "Old No 57/62, New No 111, 1st Floor, Above KFC, Wallajah Rd, Ellis Puram, Anna Salai, Triplicane, Chennai, Tamil Nadu - 600002",
+    link: "https://www.google.com/maps/search/?api=1&query=Old+No+57%2F62%2C+New+No+111%2C+1st+Floor%2C+Above+KFC%2C+Wallajah+Rd%2C+Ellis+Puram%2C+Anna+Salai%2C+Triplicane%2C+Chennai%2C+Tamil+Nadu+600002",
   },
   {
-    title: "Social Media",
-    data: [
-      {
-        name: "Instagram",
-        icon: RxInstagramLogo,
-        link: "https://instagram.com",
-      },
-      {
-        name: "Twitter",
-        icon: RxTwitterLogo,
-        link: "https://x.com/_sanidhyy",
-      },
-      {
-        name: "Linkedin",
-        icon: RxLinkedinLogo,
-        link: "https://linkedin.com",
-      },
-    ],
+    name: "Corporate office, Madurai",
+    address: "Plot no: 200 Old LIG Colony, KK Nagar, Madurai, Tamil Nadu - 625020",
+    link: "https://www.google.com/maps/search/?api=1&query=Plot+no+200+Old+LIG+Colony%2C+KK+Nagar%2C+Madurai%2C+Tamil+Nadu+625020",
   },
   {
-    title: "About",
-    data: [
-      {
-        name: "Become Sponsor",
-        icon: null,
-        link: "https://youtube.com",
-      },
-      {
-        name: "Learning about me",
-        icon: null,
-        link: "https://example.com",
-      },
-      {
-        name: "Contact Me",
-        icon: null,
-        link: "mailto:contact@example.com",
-      },
-    ],
+    name: "Development office, Coimbatore",
+    address: "2F, 2nd Floor, SLV Aranya Square, Bharathiyar Rd, opposite Government Polytechnic College for Women, Siddhapudur, New Siddhapudur, Coimbatore, Tamil Nadu 641044",
+    link: "https://www.google.com/maps/search/?api=1&query=2F%2C+2nd+Floor%2C+SLV+Aranya+Square%2C+Bharathiyar+Rd%2C+opposite+Government+Polytechnic+College+for+Women%2C+Siddhapudur%2C+New+Siddhapudur%2C+Coimbatore%2C+Tamil+Nadu+641044",
   },
 ] as const;
 
 export const NAV_LINKS = [
   {
-    title: "About me",
+    title: "Company",
     link: "#about-me",
   },
   {
-    title: "Skills",
+    title: "Capabilities",
     link: "#skills",
   },
   {
-    title: "Projects",
+    title: "Our product",
     link: "#projects",
   },
 ] as const;
 
-export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
-};

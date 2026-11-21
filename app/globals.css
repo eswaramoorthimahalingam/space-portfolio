@@ -13,7 +13,7 @@
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.4)
     ),
-    linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+    linear-gradient(90.01deg, #dfaa48 0.01%, #ffe78a 50.01%, #cc9136 100%);
   background-blend-mode: normal, screen;
   -webkit-background-clip: text;
   background-clip: text;
@@ -26,7 +26,7 @@
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
   border-radius: 32px;
-  box-shadow: inset 0 -7px 11px #a48fff1f;
+  box-shadow: inset 0 -7px 11px #e9ba571f;
   display: flex;
 
   position: relative;
@@ -38,20 +38,20 @@
 .button-primary {
   background: linear-gradient(
       180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.32) 100%
+      rgba(123, 72, 12, 0) 0%,
+      rgba(123, 72, 12, 0.32) 100%
     ),
-    rgba(113, 47, 255, 0.12);
-  box-shadow: inset 0 0 12px #bf97ff3d;
+    rgba(202, 143, 43, 0.12);
+  box-shadow: inset 0 0 12px #f5ce723d;
 }
 .button-primary:hover {
   background: linear-gradient(
       180deg,
-      rgba(60, 8, 126, 0) 0%,
-      rgba(60, 8, 126, 0.42) 100%
+      rgba(123, 72, 12, 0) 0%,
+      rgba(123, 72, 12, 0.42) 100%
     ),
-    rgba(113, 47, 255, 0.24);
-  box-shadow: inset 0 0 12px #bf97ff70;
+    rgba(202, 143, 43, 0.24);
+  box-shadow: inset 0 0 12px #f5ce7270;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
@@ -65,4 +65,138 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.brand-gold {
+  background-image: linear-gradient(105deg, #dfaa48 0%, #ffe78a 48%, #cc9136 100%);
+}
+
+/* Carry the crest's warm tones through the ambient footage. */
+main video {
+  filter: sepia(1) saturate(1.8);
+}
+
+html {
+  scroll-padding-top: 4.75rem;
+}
+
+.hero-sky {
+  object-fit: cover;
+  object-position: center;
+  transform: translateY(-30%) rotate(180deg);
+  opacity: .78;
+  /* The first edge becomes the lower edge after rotation. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 38%);
+  mask-image: linear-gradient(to bottom, transparent, black 38%);
+}
+
+.hero-crest-stage {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --light-x: 50%;
+  --light-y: 42%;
+  position: relative;
+  perspective: 950px;
+  transform-style: preserve-3d;
+}
+
+.hero-crest-art,
+.hero-crest-reflection {
+  position: absolute;
+  inset: 0;
+  background-image: var(--crest-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transition: transform 220ms ease-out;
+}
+
+.hero-crest-art {
+  filter: drop-shadow(0 14px 22px #0008);
+}
+
+.hero-crest-reflection {
+  background-image: radial-gradient(ellipse at var(--light-x) var(--light-y), #fff4baaa 0%, #efbd4b55 12%, transparent 38%);
+  mix-blend-mode: screen;
+  opacity: .85;
+  -webkit-mask-image: var(--crest-image);
+  mask-image: var(--crest-image);
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  filter: blur(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-crest-art,
+  .hero-crest-reflection { transition: none; }
+}
+
+.footer-orb {
+  position: absolute;
+  z-index: 0;
+  top: -11rem;
+  right: 12%;
+  width: clamp(18rem, 34vw, 32rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 34% 28%, #76551f 0%, #35240e 17%, #110d08 42%, #030303 68%);
+  box-shadow: inset -1.5rem -1.8rem 3rem #000, inset .4rem .3rem 1.2rem #f2ce6940, 0 0 3rem #d7a34130;
+}
+
+.footer-orb::after {
+  content: "";
+  position: absolute;
+  inset: -1.2%;
+  border-radius: inherit;
+  background: conic-gradient(from 210deg, transparent 0deg, #cf9b3c77 65deg, #ffe08b 115deg, #986b2777 155deg, transparent 220deg 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 1px));
+  filter: blur(2px);
+}
+
+@media (max-width: 639px) {
+  .footer-orb { top: -7rem; right: -5rem; width: 20rem; opacity: .72; }
+}
+
+.footer-gold {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #211406;
+  background: linear-gradient(105deg, #bf8a34, #f4d97d 45%, #cc9a43 78%, #e6c36e);
+}
+.footer-signature {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  height: clamp(16rem, 41vw, 54rem);
+}
+.footer-signature canvas {
+  display: block;
+  border: 0;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
+.footer-signature span {
+  font: 900 9vw/1 Arial, sans-serif;
+}
+.footer-signature canvas[data-ready] + span { visibility: hidden; }
+@media (max-width: 639px) {
+  .footer-signature { height: clamp(10rem, 45vw, 19rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-crest-art,
+  .hero-crest-reflection { transform: none; }
 }
